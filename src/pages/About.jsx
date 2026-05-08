@@ -1,10 +1,9 @@
 import { motion } from 'framer-motion';
 
 const team = [
-  { name: 'Neha Kapoor', title: 'Operations Head' },
-  { name: 'Vikram Singh', title: 'Service and Sales Manager' },
-  { name: 'Ritu Sharma', title: 'Project Manager' },
-  { name: 'Pradeep Rana', title: 'Field Engineer' },
+  { name: 'KHUSHI BAJPAI', title: 'Operations Head' },
+  { name: 'ANURODH BAJPAI', title: 'Service and Sales Manager' },
+  { name: 'AMULYA SHUKLA', title: 'Project Manager' },
 ];
 
 function About() {

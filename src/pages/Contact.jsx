@@ -116,7 +116,7 @@ function Contact() {
             <iframe
               title="AKB Engineering Google Map"
               className="h-full w-full"
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3441.7208446294394!2d78.03891651504261!3d30.320097581764447!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390903c9fb3d40a7%3A0xfce02dadb4d853e7!2sDehradun%2C%20Uttarakhand%2C%20India!5e0!3m2!1sen!2sus!4v1700000000000"
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3582.5!2d79.3821042!3d28.9932367!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39a07fff0faa7a33%3A0x1c46e6b18fb600bd!2sBhurarani%2C%20Rudrapur%2C%20Uttarakhand%20263153!5e0!3m2!1sen!2sin!4v1700000000000"
               allowFullScreen
               loading="lazy"
               referrerPolicy="no-referrer-when-downgrade"
