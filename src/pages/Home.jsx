@@ -161,7 +161,7 @@ function Home() {
                 src: 'https://images.pexels.com/photos/2792290/pexels-photo-2792290.jpeg?cs=srgb&dl=pexels-algrey-2792290.jpg&fm=jpg',
                 alt: 'Modern water pump station with pipes and control systems',
                 title: 'Hydro Pneumatic Pump',
-                specs: ['Pressure range 2-10 bar', 'Auto start/stop control', 'Stainless steel pressure tank'],
+                specs: ['Residential pressure 2–5 bar (30–75 psi)', 'Industrial pressure up to 10–50 bar (150–725 psi)', 'Auto start/stop control', 'Stainless steel pressure tank'],
               },
               {
                 src: 'https://images.pexels.com/photos/3800792/pexels-photo-3800792.jpeg?auto=compress&cs=tinysrgb&w=1200',
