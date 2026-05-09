@@ -2,6 +2,7 @@ import { useState } from 'react';
 
 function Contact() {
   const [formState, setFormState] = useState({ name: '', email: '', phone: '', service: '', message: '' });
+  const whatsappNumber = '919935203521';
 
   const handleChange = (event) => {
     const { name, value } = event.target;
@@ -11,7 +12,6 @@ function Contact() {
   const handleSubmit = (event) => {
     event.preventDefault();
 
-    // Save order/inquiry data
     const orderData = {
       id: Date.now().toString(),
       name: formState.name,
@@ -28,7 +28,20 @@ function Contact() {
     localStorage.setItem('akb_orders', JSON.stringify(existingOrders));
 
     alert(`Thank you ${formState.name}, your inquiry has been received.`);
-    setFormState({ name: '', email: '', phone: '', service: '', message: '' });
+  };
+
+  const getWhatsappMessage = () =>
+    encodeURIComponent(
+      `New inquiry from ${formState.name}%0AEmail: ${formState.email}%0APhone: ${formState.phone}%0AService: ${formState.service}%0AMessage: ${formState.message}`
+    );
+
+  const handleWhatsappSend = () => {
+    if (!formState.name || !formState.email || !formState.phone || !formState.service || !formState.message) {
+      alert('Please complete all inquiry fields before sending via WhatsApp.');
+      return;
+    }
+
+    window.open(`https://wa.me/${whatsappNumber}?text=${getWhatsappMessage()}`, '_blank');
   };
 
   return (
@@ -89,9 +102,17 @@ function Contact() {
               <span className="text-sm text-slate-300">Message</span>
               <textarea name="message" required rows="5" value={formState.message} onChange={handleChange} className="mt-2 w-full rounded-3xl border border-slate-800 bg-slate-900 px-4 py-4 text-slate-100 outline-none transition focus:border-brand-500" />
             </label>
-            <button type="submit" className="inline-flex w-full items-center justify-center rounded-full bg-brand-500 px-8 py-4 text-sm font-semibold text-slate-950 transition hover:bg-brand-400">
-              Submit Inquiry
-            </button>
+            <div className="grid gap-4 sm:grid-cols-2">
+              <button type="submit" className="inline-flex w-full items-center justify-center rounded-full bg-brand-500 px-8 py-4 text-sm font-semibold text-slate-950 transition hover:bg-brand-400">
+                Submit Inquiry
+              </button>
+              <button type="button" onClick={handleWhatsappSend} className="inline-flex w-full items-center justify-center rounded-full border border-brand-500 bg-slate-900/90 px-8 py-4 text-sm font-semibold text-brand-200 transition hover:bg-slate-800">
+                Send via WhatsApp
+              </button>
+            </div>
+            <p className="mt-4 text-xs text-slate-400">
+              Submit to save the inquiry locally, or use WhatsApp to send the order directly to your phone.
+            </p>
           </form>
         </div>
       </section>

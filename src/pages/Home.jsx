@@ -9,12 +9,6 @@ const services = [
   { title: 'Industrial Solutions', description: 'Robust industrial pump systems for heavy-duty operations.', icon: '🏭' },
 ];
 
-const testimonials = [
-  { name: 'Rohan Mehra', role: 'Estate Manager', review: 'AKB Engineering delivered quality pump installation on time and kept the site spotless.' },
-  { name: 'Priya Sharma', role: 'Factory Owner', review: 'The emergency response team fixed our submersible pump within hours. Highly recommended.' },
-  { name: 'Anil Joshi', role: 'Borewell Partner', review: 'Partnering with AKB Engineering expanded my business across Uttarakhand and beyond.' },
-];
-
 function Home() {
   return (
     <main className="relative overflow-hidden">
@@ -152,7 +146,10 @@ function Home() {
           <div className="flex flex-col gap-6 lg:flex-row lg:items-end lg:justify-between">
             <div>
               <p className="text-sm uppercase tracking-[0.35em] text-brand-400">Real work gallery</p>
-              <h2 className="mt-4 text-4xl font-semibold text-white">Installation, repairs, and project delivery.</h2>
+              <h2 className="mt-4 text-4xl font-semibold text-white">Hydro pneumatic, industrial, and hotel water solutions.</h2>
+              <p className="mt-4 max-w-2xl text-slate-400">
+                See examples of our hydro pneumatic pump installations, industrial water system projects, and hotel pressure boosting solutions, with key specifications for each application.
+              </p>
             </div>
             <Link to="/gallery" className="inline-flex rounded-full border border-brand-500 bg-brand-500/10 px-6 py-3 text-sm font-semibold uppercase tracking-[0.25em] text-brand-200 transition hover:bg-brand-500/20">
               Explore gallery
@@ -160,33 +157,38 @@ function Home() {
           </div>
           <div className="mt-10 grid gap-6 md:grid-cols-3">
             {[
-              'https://images.unsplash.com/photo-1523381294911-8d3cead13475?auto=format&fit=crop&w=1200&q=80',
-              'https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=1200&q=80',
-              'https://images.unsplash.com/photo-1509395176047-4a66953fd231?auto=format&fit=crop&w=1200&q=80',
-            ].map((src, idx) => (
+              {
+                src: 'https://images.unsplash.com/photo-1631609784248-5d72b9f4d8f2?auto=format&fit=crop&w=1200&q=80',
+                alt: 'Hydro pneumatic water pump system installation',
+                title: 'Hydro Pneumatic Pump',
+                specs: ['Pressure range 2-10 bar', 'Auto start/stop control', 'Stainless steel pressure tank'],
+              },
+              {
+                src: 'https://images.unsplash.com/photo-1522199670076-2852f80289c0?auto=format&fit=crop&w=1200&q=80',
+                alt: 'Large industrial pump and piping system',
+                title: 'Industrial Pump System',
+                specs: ['Heavy-duty 3-phase motors', 'High flow capacity', 'IP55 rated design'],
+              },
+              {
+                src: 'https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?auto=format&fit=crop&w=1200&q=80',
+                alt: 'Hotel water pressure boosting installation',
+                title: 'Hotel Water Boosting',
+                specs: ['Constant pressure for multi-story buildings', 'Sanitary grade piping', 'Backup pump configuration'],
+              },
+            ].map((item, idx) => (
               <div key={idx} className="overflow-hidden rounded-[2rem] border border-slate-800/90 bg-slate-900/70">
-                <img src={src} alt={`Work gallery ${idx + 1}`} className="h-80 w-full object-cover transition duration-500 hover:scale-105" />
+                <img src={item.src} alt={item.alt} className="h-80 w-full object-cover transition duration-500 hover:scale-105" />
+                <div className="space-y-3 bg-slate-950/95 p-6">
+                  <p className="text-sm uppercase tracking-[0.25em] text-brand-400">{item.title}</p>
+                  <ul className="mt-3 text-sm leading-7 text-slate-300">
+                    {item.specs.map((spec) => (
+                      <li key={spec} className="list-disc pl-5">{spec}</li>
+                    ))}
+                  </ul>
+                </div>
               </div>
             ))}
           </div>
-        </div>
-      </section>
-
-      <section className="mx-auto max-w-7xl px-6 py-20 lg:px-8">
-        <div className="grid gap-10 lg:grid-cols-3">
-          {testimonials.map((item) => (
-            <motion.article
-              key={item.name}
-              whileHover={{ y: -8 }}
-              className="rounded-[2rem] border border-slate-800/90 bg-slate-900/80 p-8 shadow-glow"
-            >
-              <p className="text-slate-300">“{item.review}”</p>
-              <div className="mt-8">
-                <p className="text-lg font-semibold text-white">{item.name}</p>
-                <p className="text-slate-400">{item.role}</p>
-              </div>
-            </motion.article>
-          ))}
         </div>
       </section>
 
