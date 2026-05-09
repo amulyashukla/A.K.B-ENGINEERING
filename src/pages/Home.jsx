@@ -158,20 +158,20 @@ function Home() {
           <div className="mt-10 grid gap-6 md:grid-cols-3">
             {[
               {
-                src: 'https://images.unsplash.com/photo-1631609784248-5d72b9f4d8f2?auto=format&fit=crop&w=1200&q=80',
-                alt: 'Hydro pneumatic water pump system installation',
+                src: 'https://images.pexels.com/photos/2792290/pexels-photo-2792290.jpeg?cs=srgb&dl=pexels-algrey-2792290.jpg&fm=jpg',
+                alt: 'Modern water pump station with pipes and control systems',
                 title: 'Hydro Pneumatic Pump',
                 specs: ['Pressure range 2-10 bar', 'Auto start/stop control', 'Stainless steel pressure tank'],
               },
               {
-                src: 'https://images.unsplash.com/photo-1522199670076-2852f80289c0?auto=format&fit=crop&w=1200&q=80',
-                alt: 'Large industrial pump and piping system',
+                src: 'https://images.pexels.com/photos/3800792/pexels-photo-3800792.jpeg?auto=compress&cs=tinysrgb&w=1200',
+                alt: 'Industrial pump room with motors and piping systems',
                 title: 'Industrial Pump System',
                 specs: ['Heavy-duty 3-phase motors', 'High flow capacity', 'IP55 rated design'],
               },
               {
-                src: 'https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?auto=format&fit=crop&w=1200&q=80',
-                alt: 'Hotel water pressure boosting installation',
+                src: 'https://images.pexels.com/photos/261102/pexels-photo-261102.jpeg?auto=compress&cs=tinysrgb&w=1200',
+                alt: 'Hotel lobby and building representing hospitality water systems',
                 title: 'Hotel Water Boosting',
                 specs: ['Constant pressure for multi-story buildings', 'Sanitary grade piping', 'Backup pump configuration'],
               },
