@@ -27,7 +27,13 @@ function Contact() {
     existingOrders.push(orderData);
     localStorage.setItem('akb_orders', JSON.stringify(existingOrders));
 
-    alert(`Thank you ${formState.name}, your inquiry has been received.`);
+    const whatsappMessage = encodeURIComponent(
+      `New inquiry from ${formState.name}%0AEmail: ${formState.email}%0APhone: ${formState.phone}%0AService: ${formState.service}%0AMessage: ${formState.message}`
+    );
+
+    window.open(`https://wa.me/${whatsappNumber}?text=${whatsappMessage}`, '_blank');
+
+    alert(`Thank you ${formState.name}, your inquiry has been received and opened in WhatsApp.`);
   };
 
   const getWhatsappMessage = () =>
